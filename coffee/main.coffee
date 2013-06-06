@@ -35,15 +35,17 @@ requirejs ['jquery', 'marked', 'highlight'], ($, marked, hl) ->
     # Get a reference to the viewer element
     viewer = $ '#viewer'
 
+    # Set options for Markdown rendering
     marked.setOptions
         # Enable SmartyPants for nice quotes and dashes
         smartypants: on
         # Enable the GFM line break behaviour
         breaks: on
-
+        # Add the callback for syntax highlighting
         highlight: (code, lang) ->
             hl.highlightAuto(code).value
 
+    # Callback for when the document changes
     update = (delta) ->
         # Re-render Markdown and update viewer
         viewer.html marked editor.getValue()
