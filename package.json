@@ -1,0 +1,31 @@
+{
+  "name": "Coursework",
+  "version": "0.0.1",
+  "description": "Text editor",
+  "main": "js/main.js",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-coffee": "*",
+    "grunt-contrib-sass": "*"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "Giles Lavelle",
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "volo": {
+    "dependencies": {
+      "jquery": "github:jquery/jquery/2.0.2",
+      "marked": "github:chjj/marked/v0.2.9",
+      "highlight": "github:isagalaev/highlight.js/7.3",
+      "require": "github:jrburke/requirejs/2.1.6",
+      "ace-builds": "github:ajaxorg/ace-builds/v1.1.01",
+      "mathjax": "https://github.com/mathjax/MathJax/archive/master.zip"
+    }
+  }
+}
