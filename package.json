@@ -9,7 +9,9 @@
     "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-uglify": "*",
     "grunt-contrib-coffee": "*",
-    "grunt-contrib-sass": "*"
+    "grunt-contrib-sass": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-watch": "*"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
