@@ -21,7 +21,7 @@ An even better approximation for $\\phi$ is ${1 + \\sqrt{5}} \\over 2$.
 """
 
 requirejs.config
-    baseUrl: 'js'
+    baseUrl: 'res'
 
     paths:
         highlight: 'highlight/build/highlight.pack'
@@ -36,22 +36,26 @@ requirejs ['jquery', 'marked', 'highlight', 'dropbox'], ($, marked, hl, Dropbox)
     editor.setTheme 'ace/theme/monokai'
     editor.getSession().setMode 'ace/mode/markdown'
 
-    # Get a reference to the viewer element
+    # Get some DOM
     viewer = $ '#viewer'
+    db_button = $ '#dropbox'
 
-    client = new Dropbox.Client
-        key: 'bU8mb6wQpnA=|yAAb6C7Ke3/ROsEP06RqVJrxDez/09agnys6gI10Ag=='
-        sandbox: yes
+    client = null
 
-    client.authDriver new Dropbox.Drivers.Redirect()
+    auth = () ->
+        client = new Dropbox.Client
+            key: 'bU8mb6wQpnA=|yAAb6C7Ke3/ROsEP06RqVJrxDez/09agnys6gI10Ag=='
+            sandbox: yes
 
-    client.authenticate (error, client) ->
-        if error
-            console.log error
-            return
+        client.authDriver new Dropbox.Drivers.Redirect()
 
-        client.getUserInfo (error, info) ->
-            console.log info.name
+        client.authenticate (error, authed_client) ->
+            if error
+                console.log error
+                return
+
+            authed_client.getUserInfo (error, info) ->
+                console.log info.name
 
     # Set options for Markdown rendering
     marked.setOptions
@@ -74,4 +78,7 @@ requirejs ['jquery', 'marked', 'highlight', 'dropbox'], ($, marked, hl, Dropbox)
 
     $(document).ready ->
         editor.setValue sample
+
+        db_button.on 'click', auth
+
         update()

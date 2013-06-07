@@ -1,9 +1,31 @@
+$nav-height: 80px
+
+*
+    -webkit-box-sizing: border-box
+
 body
     font-family: Helvetica, sans-serif
+    margin: 0
+
+nav
+    background: #eee
+    color: #222
+    padding: 15px
+    border-bottom: 1px solid black
+
+    ul
+        margin: 0
+        list-style-type: none
+        cursor: pointer
+        display: inline-block
+
+        li
+            float: left
+            margin-right: 40px
 
 #editor
     position: fixed
-    top: 0
+    top: $nav-height
     left: 0
     width: 500px
     height: 100%

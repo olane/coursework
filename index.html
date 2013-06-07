@@ -13,17 +13,44 @@ MathJax.Hub.Config({
 </script>
 
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="js/highlight/src/styles/monokai.css">
+<link rel="stylesheet" href="res/highlight/src/styles/monokai.css">
+<link rel="stylesheet" href="res/fontawesome/css/font-awesome.min.css">
 </head>
 
 <body>
-<div id="editor"></div>
+<header>
+    <nav>
+        <ul>
+            <li id="dropbox">
+                <i class="icon-folder-close icon-2x" title="Connect to Dropbox"></i>
+            </li>
+            <li id="add">
+                <i class="icon-plus icon-2x" title="Create a new document"></i>
+            </li>
+            <li id="save">
+                <i class="icon-save icon-2x" title="Save your work"></i>
+            </li>
+            <li id="export">
+                <i class="icon-file icon-2x" title="Export as PDF"></i>
+            </li>
+        </ul>
+    </nav>
+</header>
 
+<div id="main">
+
+<div id="editor"></div>
 <div id="viewer"></div>
 
-<script src="js/require.js"></script>
-<script src="js/ace-builds/src-min-noconflict/ace.js" charset="utf-8"></script>
-<script src="js/master/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</div>
+
+<footer>
+
+</footer>
+
+<script src="res/require.js"></script>
+<script src="res/ace-builds/src-min-noconflict/ace.js" charset="utf-8"></script>
+<script src="res/master/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script src="js/main.js"></script>
 </body>
 
