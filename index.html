@@ -12,6 +12,7 @@ MathJax.Hub.Config({
 });
 </script>
 
+<link rel="stylesheet" href="res/normalise.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="res/highlight/src/styles/monokai.css">
 <link rel="stylesheet" href="res/fontawesome/css/font-awesome.min.css">
@@ -19,6 +20,7 @@ MathJax.Hub.Config({
 
 <body>
 <header>
+    <h1 id="title">Coursework</h1>
     <nav>
         <ul>
             <li id="dropbox">
@@ -37,10 +39,14 @@ MathJax.Hub.Config({
     </nav>
 </header>
 
+<div class="clearfix"></div>
+
 <div id="main">
 
 <div id="editor"></div>
 <div id="viewer"></div>
+
+<div class="clearfix"></div>
 
 </div>
 
@@ -49,7 +55,7 @@ MathJax.Hub.Config({
 </footer>
 
 <script src="res/require.js"></script>
-<script src="res/ace-builds/src-min-noconflict/ace.js" charset="utf-8"></script>
+<script src="res/ace/ace.js" charset="utf-8"></script>
 <script src="res/master/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script src="js/main.js"></script>
 </body>
