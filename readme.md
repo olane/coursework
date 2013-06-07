@@ -20,16 +20,16 @@ Coming soon
 
 Assuming you have Git and Node and are using some sort of Unix:
 
-    # Install Grunt for building and Volo for package managing
-    [sudo] npm install -g grunt-cli volo
+    # Install Volo for package managing
+    [sudo] npm install -g volo
 
     # Get the code
     git clone https://github.com/lavelle/coursework.git
     cd coursework
 
-    npm install      # Install build tools
     volo install     # Install libraries
-    grunt            # Build the project
+    make clean       # Tidy up libraries
+    make compile     # Compile CoffeeScript and Sass
     open index.html  # Use it
 
 ## Why did you make it?
