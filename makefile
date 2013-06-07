@@ -1,0 +1,24 @@
+compile:
+	sass sass/style.sass css/style.css
+	coffee -c -o js coffee/main.coffee
+
+watch:
+	ls sass/style.sass coffee/main.coffee | entr make compile
+
+build:
+	if [ ! -d "build" ]; then mkdir build; fi
+	cp index.html build
+	cp -R css build
+	cp -R js build
+	cat res/*.js > build/js/res.js
+
+clean:
+	if [ -d "res/Font-Awesome" ]; then \
+	mv res/Font-Awesome/build/assets/font-awesome res/tmp; \
+	rm -rf res/Font-Awesome; \
+	mv res/tmp res/fontawesome; \
+	fi
+
+	mv res/ace-builds/src-min-noconflict res/tmp
+	rm -rf res/ace-builds
+	mv res/tmp res/ace
