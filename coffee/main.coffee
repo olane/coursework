@@ -38,7 +38,19 @@ requirejs ['jquery', 'marked', 'highlight', 'dropbox'], ($, marked, hl, Dropbox)
 
     # Get some DOM
     viewer = $ '#viewer'
+
     db_button = $ '#dropbox'
+    save_button = $ '#save'
+
+    message = $ '#message'
+
+    $window = $ window
+
+    alert = (text) ->
+        message
+            .text(text)
+            .css(left: ($window.width() - message.width()) / 2)
+            .fadeIn('fast').delay(2000).fadeOut('slow')
 
     client = null
 
@@ -80,5 +92,7 @@ requirejs ['jquery', 'marked', 'highlight', 'dropbox'], ($, marked, hl, Dropbox)
         editor.setValue sample
 
         db_button.on 'click', auth
+
+        save_button.on 'click', () -> alert 'Please connect to Dropbox to save files.'
 
         update()
