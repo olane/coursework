@@ -26,7 +26,11 @@ requirejs.config
     paths:
         highlight: 'highlight/build/highlight.pack'
 
-requirejs ['jquery', 'marked', 'highlight'], ($, marked, hl) ->
+    shim:
+        dropbox:
+            exports: 'Dropbox'
+
+requirejs ['jquery', 'marked', 'highlight', 'dropbox'], ($, marked, hl, Dropbox) ->
     # Setup Ace editor
     editor = ace.edit 'editor'
     editor.setTheme 'ace/theme/monokai'
@@ -34,6 +38,20 @@ requirejs ['jquery', 'marked', 'highlight'], ($, marked, hl) ->
 
     # Get a reference to the viewer element
     viewer = $ '#viewer'
+
+    client = new Dropbox.Client
+        key: 'bU8mb6wQpnA=|yAAb6C7Ke3/ROsEP06RqVJrxDez/09agnys6gI10Ag=='
+        sandbox: yes
+
+    client.authDriver new Dropbox.Drivers.Redirect()
+
+    client.authenticate (error, client) ->
+        if error
+            console.log error
+            return
+
+        client.getUserInfo (error, info) ->
+            console.log info.name
 
     # Set options for Markdown rendering
     marked.setOptions

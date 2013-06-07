@@ -43,6 +43,7 @@ Written using CoffeeScript and Sass for bonus hipster points.
 - [MathJax][]
 - [Marked][]
 - [Highlight.js][]
+- [Dropbox.js][]
 - [jQuery][]
 
 [the demo]: https://lavelle.github.io/coursework
@@ -51,6 +52,7 @@ Written using CoffeeScript and Sass for bonus hipster points.
 [marked]: https://github.com/chjj/marked
 [mathjax]: http://www.mathjax.org/
 [highlight.js]: https://github.com/isagalaev/highlight.js
+[dropbox.js]: https://github.com/dropbox/dropbox-js
 [jquery]: http://jquery.com/
 
 ## License

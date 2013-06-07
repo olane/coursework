@@ -27,7 +27,8 @@
       "highlight": "github:isagalaev/highlight.js/7.3",
       "require": "github:jrburke/requirejs/2.1.6",
       "ace-builds": "github:ajaxorg/ace-builds/v1.1.01",
-      "mathjax": "https://github.com/mathjax/MathJax/archive/master.zip"
+      "mathjax": "https://github.com/mathjax/MathJax/archive/master.zip",
+      "dropbox": "http://cdnjs.cloudflare.com/ajax/libs/dropbox.js/0.9.2/dropbox.min.js"
     }
   }
 }
