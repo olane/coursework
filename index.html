@@ -23,7 +23,12 @@ MathJax.Hub.Config({
 <div id="message"></div>
 
 <header>
-    <h1 id="title">Coursework</h1>
+    <div class="left">
+        <i class="icon-pencil icon-2x" id="logo"></i>
+        <input type="text" placeholder="Untitled document">
+    </div>
+
+    <div class="right">
     <nav>
         <ul>
             <li id="dropbox">
@@ -39,10 +44,11 @@ MathJax.Hub.Config({
                 <i class="icon-file" title="Export as PDF"></i>
             </li>
             <li id="settings">
-                <i class="icon-cog" title="Save"></i>
+                <i class="icon-cog" title="Settings"></i>
             </li>
         </ul>
     </nav>
+    </div>
 </header>
 
 <div class="clearfix"></div>
@@ -55,10 +61,6 @@ MathJax.Hub.Config({
 <div class="clearfix"></div>
 
 </div>
-
-<footer>
-
-</footer>
 
 <script src="res/require.js"></script>
 <script src="res/ace/ace.js" charset="utf-8"></script>

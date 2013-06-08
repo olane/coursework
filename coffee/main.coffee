@@ -9,7 +9,7 @@ A link to [somewhere](http://example.com)
 Some *italic* and **bold** text.
 
 Coffee   | Price
----------|---------
+---------|-------
 Filter   | £1.20
 Espresso | £1.40
 Latte    | £2.20

@@ -1,14 +1,11 @@
-$header-height: 60px
 $min-panel-width: 300px
 $highlight: #0393F3
+$dark-grey: #222
+$light-grey: #eee
 
 @mixin table-border
   border-style: solid
   border-color: #bbb
-
-@mixin header-item
-  line-height: 50px
-  font-size: 20px
 
 *
   -webkit-box-sizing: border-box
@@ -23,41 +20,53 @@ $highlight: #0393F3
 .clearfix
   *zoom: 1
 
+.left
+  float: left
+
+.right
+  float: right
+
 body
   font-family: Helvetica, sans-serif
   margin: 0
   overflow-y: hidden
 
 header
-  height: $header-height
-  background: #eee
-  color: #222
+  background: $light-grey
+  color: $dark-grey
   padding: 0 20px
   border-bottom: 1px solid black
   height: 50px
 
-#title
-  margin: 0
+  input
+    margin-top: 11px
+    padding: 3px
+    font-size: 20px
+    border: none
+
+#logo
   float: left
-  @include header-item
+  border: 3px solid $dark-grey
+  padding: 2px
+  margin: 3px 20px 0 0
 
 nav
-  float: right
-
   ul
-    margin: 16px 0 0 0
+    margin-top: 16px
     list-style-type: none
-    cursor: pointer
 
     li
       float: left
       margin-right: 25px
 
-      i
-        -webkit-transition: 0.2s color
+header
+  i
+    cursor: pointer
+    color: $dark-grey
+    -webkit-transition: 0.2s color
 
-      i:hover
-        color: $highlight
+  i:hover
+    color: $highlight
 
 pre code
   font-size: 14px
@@ -75,7 +84,7 @@ pre code
   height: 2000px
 
 #viewer
-  padding: 20px
+  padding: 30px
   overflow: scroll
 
 table
