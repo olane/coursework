@@ -36,14 +36,13 @@ header
   border-bottom: 1px solid black
   height: 50px
 
-  *
-    float: left
-
 #title
   margin: 0
+  float: left
   @include header-item
 
 nav
+  float: right
 
   ul
     margin: 16px 0 0 0
@@ -60,6 +59,9 @@ nav
       i:hover
         color: $highlight
 
+pre code
+  font-size: 14px
+  font-family: Source Code Pro, Monaco, Consolas, monospace
 
 #main
   min-width: $min-panel-width * 2

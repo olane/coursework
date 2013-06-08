@@ -8,13 +8,18 @@ sample = """
 A link to [somewhere](http://example.com)
 Some *italic* and **bold** text.
 
-Header 1 | Header 2
+Coffee   | Price
 ---------|---------
-An item  | Another
+Filter   | £1.20
+Espresso | £1.40
+Latte    | £2.20
 
 ```javascript
 var x = 1;
+console.log("Hello world!");
 ```
+
+"Premature optimisation is the root of all evil" -- Donald Knuth
 
 A good approximation for $\\pi$ is $22 \\over 7$.
 An even better approximation for $\\phi$ is ${1 + \\sqrt{5}} \\over 2$.
@@ -75,6 +80,8 @@ requirejs ['jquery', 'marked', 'highlight', 'dropbox'], ($, marked, hl, Dropbox)
         smartypants: on
         # Enable the GFM line break behaviour
         breaks: on
+        # Escape special characters
+        sanitize: yes
         # Add the callback for syntax highlighting
         highlight: (code, lang) ->
             hl.highlightAuto(code).value
