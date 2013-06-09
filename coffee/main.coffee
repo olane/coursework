@@ -1,30 +1,3 @@
-sample = """
-# A title
-
-1. The first
-2. The second
-3. The third
-
-A link to [somewhere](http://example.com)
-Some *italic* and **bold** text.
-
-Coffee   | Price
----------|-------
-Filter   | £1.20
-Espresso | £1.40
-Latte    | £2.20
-
-```javascript
-var x = 1;
-console.log("Hello world!");
-```
-
-"Premature optimisation is the root of all evil" -- Donald Knuth
-
-A good approximation for $\\pi$ is $22 \\over 7$.
-An even better approximation for $\\phi$ is ${1 + \\sqrt{5}} \\over 2$.
-"""
-
 requirejs.config
     baseUrl: 'res'
 
@@ -35,36 +8,30 @@ requirejs.config
         dropbox:
             exports: 'Dropbox'
 
-requirejs ['jquery', 'marked', 'highlight', 'dropbox'], ($, marked, hl, Dropbox) ->
+require ['jquery', 'marked', 'highlight', 'dropbox'],
+($, marked, hl, Dropbox) ->
     # Setup Ace editor
     editor = ace.edit 'editor'
     editor.setTheme 'ace/theme/monokai'
     editor.getSession().setMode 'ace/mode/markdown'
 
     # Get some DOM
-    viewer = $ '#viewer'
-
-    db_button = $ '#dropbox'
-    save_button = $ '#save'
-
-    message = $ '#message'
-
-    $window = $ window
+    dom = {}
 
     alert = (text) ->
-        message
+        dom.message
             .text(text)
-            .css(left: ($window.width() - message.width()) / 2)
+            .css(left: (dom.window.width() - dom.message.width()) / 2)
             .fadeIn('fast').delay(2000).fadeOut('slow')
 
     client = null
 
-    auth = () ->
+    auth = ->
         client = new Dropbox.Client
             key: 'bU8mb6wQpnA=|yAAb6C7Ke3/ROsEP06RqVJrxDez/09agnys6gI10Ag=='
             sandbox: yes
 
-        client.authDriver new Dropbox.Drivers.Redirect()
+        client.authDriver new Dropbox.Drivers.Redirect rememberUser: yes
 
         client.authenticate (error, authed_client) ->
             if error
@@ -74,13 +41,33 @@ requirejs ['jquery', 'marked', 'highlight', 'dropbox'], ($, marked, hl, Dropbox)
             authed_client.getUserInfo (error, info) ->
                 console.log info.name
 
+    save = ->
+        if not client?
+            alert 'Please connect to Dropbox to save documents.'
+            return
+
+        filename = dom.filename.val()
+
+        if not filename
+            alert 'Please name this document before saving.'
+            return
+
+        client.writeFile "#{filename}.md", editor.getValue(), (error, stat) ->
+            if error
+                console.log error
+                return
+
+            console.log 'File saved'
+
+
     # Set options for Markdown rendering
     marked.setOptions
         # Enable SmartyPants for nice quotes and dashes
         smartypants: on
         # Enable the GFM line break behaviour
         breaks: on
-        # Escape special characters
+        # Ignore inline HTML -- it's not needed for writing prose and <script>
+        # tags break things
         sanitize: yes
         # Add the callback for syntax highlighting
         highlight: (code, lang) ->
@@ -89,17 +76,21 @@ requirejs ['jquery', 'marked', 'highlight', 'dropbox'], ($, marked, hl, Dropbox)
     # Callback for when the document changes
     update = (delta) ->
         # Re-render Markdown and update viewer
-        viewer.html marked editor.getValue()
+        dom.viewer.html marked editor.getValue()
         # Re-render equations
         MathJax.Hub.Queue ['Typeset', MathJax.Hub, 'viewer']
 
     editor.on 'change', update
 
     $(document).ready ->
-        editor.setValue sample
+        for s in ['viewer', 'dropbox', 'save', 'message', 'filename']
+            dom[s] = $ '#' + s
+        dom.window = $ window
 
-        db_button.on 'click', auth
+        $.get 'sample.md', (text)->
+            editor.setValue text
 
-        save_button.on 'click', () -> alert 'Please connect to Dropbox to save files.'
+        dom.dropbox.on 'click', auth
+        dom.save.on 'click', save
 
         update()
