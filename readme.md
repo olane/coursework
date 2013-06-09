@@ -65,4 +65,5 @@ Written using CoffeeScript and Sass for bonus hipster points.
 
 ## License
 
-MIT
+MIT licensed
+Copyright (c) 2013 Giles Lavelle
