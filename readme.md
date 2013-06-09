@@ -58,7 +58,7 @@ Written using CoffeeScript and Sass for bonus hipster points.
 [mathjax]:       http://www.mathjax.org/
 [highlight.js]:  https://github.com/isagalaev/highlight.js
 [dropbox.js]:    https://github.com/dropbox/dropbox-js
-[normalise.css]: http://necolas.github.io/normalize.css/
+[normalize.css]: http://necolas.github.io/normalize.css/
 [font awesome]:  http://fortawesome.github.io/Font-Awesome/
 [require.js]:    http://requirejs.org/
 [jquery]:        http://jquery.com/
@@ -66,4 +66,5 @@ Written using CoffeeScript and Sass for bonus hipster points.
 ## License
 
 MIT licensed
+
 Copyright (c) 2013 Giles Lavelle
