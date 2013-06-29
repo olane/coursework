@@ -49,6 +49,8 @@ Written using CoffeeScript and Sass for bonus hipster points.
 - [Normalize.css][]
 - [Font Awesome][]
 - [Require.js][]
+- [Backbone][]
+- [Underscore][]
 - [jQuery][]
 
 [online]: https://lavelle.github.io/coursework
@@ -61,6 +63,8 @@ Written using CoffeeScript and Sass for bonus hipster points.
 [normalize.css]: http://necolas.github.io/normalize.css/
 [font awesome]:  http://fortawesome.github.io/Font-Awesome/
 [require.js]:    http://requirejs.org/
+[Backbone]:      http://backbonejs.org/
+[Underscore]:    http://underscorejs.org/
 [jquery]:        http://jquery.com/
 
 ## License
