@@ -16,7 +16,7 @@ Filter   | £1.20
 Espresso | £1.40
 Latte    | £2.20
 
-```javascript
+```js
 var x = 1;
 console.log("Hello world!");
 ```
