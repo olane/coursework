@@ -21,34 +21,16 @@ MathJax.Hub.Config({
 <body>
 
 <div id="message"></div>
+<div class="shade"></div>
 
 <header>
     <div class="left">
         <i class="icon-pencil icon-2x" id="logo"></i>
         <input type="text" id="filename" placeholder="Untitled document">
+        <div id="save-message" class"left"></div>
     </div>
 
-    <div class="right">
-    <nav>
-        <ul>
-            <li id="dropbox">
-                <i class="icon-folder-close" title="Connect to Dropbox"></i>
-            </li>
-            <li id="add">
-                <i class="icon-plus" title="Create a new document"></i>
-            </li>
-            <li id="save">
-                <i class="icon-save" title="Save your work"></i>
-            </li>
-            <li id="export">
-                <i class="icon-file" title="Export as PDF"></i>
-            </li>
-            <li id="settings">
-                <i class="icon-cog" title="Settings"></i>
-            </li>
-        </ul>
-    </nav>
-    </div>
+    <div class="right"></div>
 </header>
 
 <div class="clearfix"></div>
@@ -66,6 +48,7 @@ MathJax.Hub.Config({
 <script src="res/ace/ace.js" charset="utf-8"></script>
 <script src="res/master/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script src="js/main.js" charset="utf-8"></script>
+<script src="js/templates/index.js" charset="utf-8"></script>
 </body>
 
 </html>
