@@ -23,7 +23,9 @@
       "mathjax": "https://github.com/mathjax/MathJax/archive/master.zip",
       "dropbox": "http://cdnjs.cloudflare.com/ajax/libs/dropbox.js/0.9.2/dropbox.min.js",
       "fontawesome": "github:FortAwesome/Font-Awesome/v3.1.1",
-      "normalise": "github:necolas/normalize.css/v2.1.2#normalize.css" // Rule Britannia
+      "normalise": "github:necolas/normalize.css/v2.1.2#normalize.css",
+      "underscore": "github:documentcloud/underscore/1.4.4",
+      "backbone": "github:documentcloud/backbone/1.0.0"
     }
   }
 }
