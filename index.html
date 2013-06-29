@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Coursework</title>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']]
+    }
+});
+</script>
+
+<link rel="stylesheet" href="res/normalise.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="res/highlight/src/styles/github.css">
+<link rel="stylesheet" href="res/fontawesome/css/font-awesome.min.css">
+</head>
+
+<body>
+
+<div id="message"></div>
+<div class="shade"></div>
+
+<header>
+    <div class="left">
+        <i class="icon-pencil icon-2x" id="logo"></i>
+        <input type="text" id="filename" placeholder="Untitled document">
+        <div id="save-message" class"left"></div>
+    </div>
+
+    <div class="right"></div>
+</header>
+
+<div class="clearfix"></div>
+
+<div id="main">
+
+<div id="editor"></div>
+<div id="viewer"></div>
+
+<div class="clearfix"></div>
+
+</div>
+
+<script src="res/require.js"></script>
+<script src="res/ace/ace.js" charset="utf-8"></script>
+<script src="res/master/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="js/main.js" charset="utf-8"></script>
+<script src="js/templates/index.js" charset="utf-8"></script>
+</body>
+
+</html>

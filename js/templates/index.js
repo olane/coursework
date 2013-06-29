@@ -1,0 +1,5 @@
+window.JST = {};
+
+window.JST["modal"] = "<div class=\"title\">    <h2 class=\"left\">Open an existing file</h2>    <input type=\"button\" class=\"right close\" value=\"&times;\"></div><div class=\"clearfix\"></div><ul class=\"content\">    <% _.each(entries, function(entry) { %>        <li><%= entry %></li>    <% }); %></ul>";
+window.JST["toolbar"] = "<ul>    <li id=\"dropbox\">        <i class=\"icon-folder-close\" title=\"Connect to Dropbox\"></i>    </li>    <li id=\"open\">        <i class=\"icon-file\" title=\"Open an existing document\"></i>    </li>    <li id=\"save\">        <i class=\"icon-save\" title=\"Save your work\"></i>    </li>    <li id=\"export\">        <i class=\"icon-arrow-right\" title=\"Export as PDF\"></i>    </li>    <li id=\"settings\">        <i class=\"icon-cog\" title=\"Settings\"></i>    </li></ul>";
+window.JST["settings"] = "<h2>Settings</h2><h3>Theme</h3><h3>Markdown</h3><ul>    <li>        SmartyPants        <span class=\"description\">Improves appearance of quotes, dashes and ellipses</span>        <input type=\"tick\">    </li></ul>";
