@@ -45,10 +45,9 @@ header
     border: none
 
 #logo
-  float: left
   border: 3px solid $dark-grey
   padding: 2px 6px
-  margin: 3px 20px 0 0
+  margin-top: 3px
   border-radius: 50%
   width: 42px
 
@@ -72,6 +71,11 @@ header
 
   i:hover
     color: $highlight
+
+  div.left > *
+    float: left
+    margin-right: 20px
+
 
 pre code
   font-size: 14px
@@ -106,7 +110,7 @@ tr
   @include table-border
   border-width: 0 0 1px 0
 
-tr:nth-child(odd)
+tr:nth-child(even)
   background: #efefef
 
 td, th
@@ -125,3 +129,48 @@ td, th
   border-radius: 3px
   pointer-events: none
 
+#save-message
+  font-size: 10px
+  color: #aaa
+  margin-top: 13px
+  width: 200px
+
+#modal
+  width: 600px
+  height: 600px
+  position: absolute
+  top: 100px
+  border: 1px solid black
+  background: $light-grey
+  display: none
+  z-index: 10
+
+  .content
+    list-style-type: none
+    margin: 0
+    padding: 0
+
+    li
+      border-bottom: 1px solid black
+      padding: 15px
+
+    li:nth-child(even)
+      background: white
+
+.title
+  display: inline-block
+  width: 100%
+  padding: 0 20px
+  background: white
+  border-bottom: 1px solid black
+
+.close
+  margin-top: 22px
+
+.shade
+  position: absolute
+  background: rgba(0, 0, 0, 0.85)
+  display: none
+  width: 100%
+  height: 100%
+  z-index: 9
