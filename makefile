@@ -1,9 +1,9 @@
 compile:
 	sass sass/style.sass css/style.css
-	coffee -c -o js coffee/main.coffee
+	coffee -c -o js coffee/*.coffee
 
 watch:
-	ls sass/style.sass coffee/main.coffee | entr make compile
+	ls sass/*.sass coffee/*.coffee | entr make compile
 
 build:
 	if [ ! -d "build" ]; then mkdir build; fi
