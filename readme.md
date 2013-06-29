@@ -53,7 +53,7 @@ Written using CoffeeScript and Sass for bonus hipster points.
 - [Underscore][]
 - [jQuery][]
 
-[online]: https://lavelle.github.io/coursework
+[online]: http://lavelle.github.io/coursework
 
 [ace editor]:    http://ace.ajax.org/
 [marked]:        https://github.com/chjj/marked
