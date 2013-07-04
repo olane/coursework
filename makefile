@@ -14,9 +14,9 @@ build:
 	cat res/*.js > build/js/res.js
 
 clean:
-	if [ -d "res/Font-Awesome" ]; then \
-	mv res/Font-Awesome/build/assets/font-awesome res/tmp; \
-	rm -rf res/Font-Awesome; \
+	if [ -d "res/fontawesome" ]; then \
+	mv res/fontawesome/build/assets/font-awesome res/tmp; \
+	rm -rf res/fontawesome; \
 	mv res/tmp res/fontawesome; \
 	fi
 
