@@ -31,7 +31,6 @@ Assuming you have Git, Node, Sass and CoffeeScript and are using some sort of Un
 
     volo install     # Install libraries
     make clean       # Tidy up libraries
-    mkdir css        # Make directory for CSS files
     make compile     # Compile CoffeeScript and Sass
     open index.html  # Use it (use 'see' instead of 'open' on Debian-based systems)
 
